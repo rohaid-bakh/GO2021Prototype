@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+	[Range (10,50)] [SerializeField] private float m_walkSpeed = 20f;			// How fast the character walks. Testing purposes only. Should be set to 20 by default
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
@@ -16,6 +17,7 @@ public class CharacterController2D : MonoBehaviour
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
+	private bool m_Run; //Whether or not the player is running
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -107,8 +109,14 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 
+			if (run && m_Grounded && !crouch) {
+				m_walkSpeed = 50f;
+
+			} else  {
+				m_walkSpeed = 20f;
+			}
 			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			Vector3 targetVelocity = new Vector2(move * m_walkSpeed, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
@@ -125,11 +133,9 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
-		Debug.Log("Grounded: " + m_Grounded );
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
-			Debug.Log("Checking for Jump: " );
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
