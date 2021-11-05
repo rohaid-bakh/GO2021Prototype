@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.Events;
 public class DebugMenu : MonoBehaviour
 {
+    //This file serves as a debug menu for testing.
+    // Press G to switch between two different maps
+
+    //TO DO: Allow for switching between more than 2 maps
     [SerializeField] private UnityEvent m_arenaSwitchInvoke;
     [SerializeField] private GameObject runArena;
     [SerializeField] private GameObject crouchArena;
 
-    // Start is called before the first frame update
+   
    void Start() {
 
      

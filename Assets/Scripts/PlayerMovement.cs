@@ -7,14 +7,14 @@ public class PlayerMovement : MonoBehaviour
   
     public CharacterController2D script;
 
-    float horizontalAxis = 0f;
-    public float walkSpeed = 40f;
+    float horizontalAxis = 0f; // x input
+    public float walkSpeed = 40f; // default 
 
     bool jump = false;
     bool crouch = false;
     bool run = false;
 
-    // Update is called once per frame
+
         void Update()
     {
         

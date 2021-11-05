@@ -113,6 +113,9 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 
+			//changes the walkSpeed velocity depending if the user is running or not
+			//makes sure to only enable running while grounded and not crouching
+
 			if (run && m_Grounded && !crouch) {
 				m_walkSpeed = 50f;
 				if (!m_wasRunning) {
@@ -121,6 +124,7 @@ public class CharacterController2D : MonoBehaviour
 
 			} else  {
 				m_walkSpeed = 20f;
+				// responsible for setting smoothing setting to only change while running/jumping
 				if (m_wasRunning && !m_Grounded) {
 					m_MovementSmoothing = .15f;
 
@@ -152,6 +156,8 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
+
+			// Changes the X and Y velocity depending on if the player was running or walking before jumping
 			if (m_wasRunning) {
 				m_yJumpForce = 900f;
 				m_XJumpForce = 500f;
@@ -160,6 +166,7 @@ public class CharacterController2D : MonoBehaviour
 				m_yJumpForce = 700f;
 				m_XJumpForce = 0f;
 			}
+
 			m_Rigidbody2D.AddForce(new Vector2(m_XJumpForce, m_yJumpForce));
 		}
 	}
