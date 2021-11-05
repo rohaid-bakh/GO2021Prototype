@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
-
+  
     public CharacterController2D script;
 
     float horizontalAxis = 0f;
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     bool run = false;
 
     // Update is called once per frame
-    void Update()
+        void Update()
     {
         
         horizontalAxis = Input.GetAxisRaw("Horizontal") * walkSpeed ;
@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         } else if (Input.GetButtonUp("Run")) {
             run = false;
         }
+
+      
     } 
 
     void FixedUpdate() {
