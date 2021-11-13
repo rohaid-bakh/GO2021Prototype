@@ -12,6 +12,8 @@ public class DebugMenu : MonoBehaviour
     [SerializeField] private GameObject runArena;
     [SerializeField] private GameObject crouchArena;
 
+    [SerializeField] private CharacterController2D script;
+   
    
    void Start() {
 
@@ -36,5 +38,12 @@ public class DebugMenu : MonoBehaviour
     public void mapChange(){
             runArena.SetActive(!runArena.activeSelf);
             crouchArena.SetActive(!crouchArena.activeSelf);
+    }
+
+    void OnDrawGizmosSelected(){
+            if (script.catchCheck == null) {
+                return;
+            }
+            Gizmos.DrawWireSphere(script.catchCheck.position, script.catchRange);
     }
 }
