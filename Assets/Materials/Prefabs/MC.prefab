@@ -78,8 +78,6 @@ GameObject:
   - component: {fileID: 7804445458217225174}
   - component: {fileID: 7804445458217225173}
   - component: {fileID: 7804445458217225175}
-  - component: {fileID: 7804445458217225169}
-  - component: {fileID: 7804445458217225168}
   m_Layer: 3
   m_Name: MC
   m_TagString: Untagged
@@ -207,7 +205,7 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 7804445458245678423}
   m_CrouchDisableCollider: {fileID: 7804445458217225174}
   catchRange: 0.5
-  animator: {fileID: 7804445458217225169}
+  animator: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -299,42 +297,8 @@ MonoBehaviour:
         m_CallState: 1
   runArena: {fileID: 0}
   crouchArena: {fileID: 0}
+  screen: {fileID: 0}
   script: {fileID: 7804445458217225163}
---- !u!95 &7804445458217225169
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7804445458217225166}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 652f1c0fbc430a14f8f98aae7f88aea1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &7804445458217225168
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7804445458217225166}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &7804445458245678422
 GameObject:
   m_ObjectHideFlags: 0
