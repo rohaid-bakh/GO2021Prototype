@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e546a7e4866d1a4f9e7cdc1de7867d4
+guid: 6525c8d4098c2d945a1ca8120f1147a7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jo_IDLE_0
+      name: Jo_NET-CRAWL_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 13
-        height: 29
+        width: 36
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77942fc961f126f418375f52298f2998
-      internalID: 493915658
+      spriteID: 01cdaf02e78eb714f9dcdebb37c18785
+      internalID: -301942458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jo_IDLE_1
+      name: Jo_NET-CRAWL_1
       rect:
         serializedVersion: 2
-        x: 37
+        x: 36
         y: 0
-        width: 14
-        height: 29
+        width: 36
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebee242d41fa1d046a1e3910100f92c4
-      internalID: 201137341
+      spriteID: 01b793200e2857a499ae8fbfe2e33587
+      internalID: -23455621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jo_IDLE_2
+      name: Jo_NET-CRAWL_2
       rect:
         serializedVersion: 2
-        x: 74
+        x: 72
         y: 0
-        width: 14
-        height: 29
+        width: 36
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1e937ff7d5e24442a909d961c7d271a
-      internalID: -901271899
+      spriteID: e55dea5244f21c4448ad3a379edec0e3
+      internalID: 780508015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jo_IDLE_3
+      name: Jo_NET-CRAWL_3
       rect:
         serializedVersion: 2
-        x: 111
+        x: 108
         y: 0
-        width: 13
-        height: 29
+        width: 36
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9739852d09a9ed149938776555193722
-      internalID: 1362211472
+      spriteID: 681a2924f1ede1645b8a17d67ee4a76c
+      internalID: -1562006417
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jo_IDLE_2: -901271899
-      Jo_IDLE_0: 493915658
-      Jo_IDLE_3: 1362211472
-      Jo_IDLE_1: 201137341
+      Jo_NET-CRAWL_3: -1562006417
+      Jo_NET-CRAWL_1: -23455621
+      Jo_NET-CRAWL_2: 780508015
+      Jo_NET-CRAWL_0: -301942458
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

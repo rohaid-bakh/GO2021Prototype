@@ -21,10 +21,10 @@ public class DebugMenu : MonoBehaviour
             m_arenaSwitchInvoke = new UnityEvent();
         }
 
-        if(screen != null){
-        Debug.Log("Screen Height: " + screen.pixelHeight + " px");
-        Debug.Log("Screen Width: " + screen.pixelWidth + " px");
-        }
+        // if(screen != null){
+        // Debug.Log("Screen Height: " + screen.pixelHeight + " px");
+        // Debug.Log("Screen Width: " + screen.pixelWidth + " px");
+        // }
 
     }
 
