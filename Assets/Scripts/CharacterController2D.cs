@@ -45,7 +45,6 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
 
@@ -124,16 +123,16 @@ public class CharacterController2D : MonoBehaviour
 			//makes sure to only enable running while grounded and not crouching
 
 			if (run && m_Grounded && !crouch) {
-				m_walkSpeed = 50f;
+				m_walkSpeed = 18f;
 				if (!m_wasRunning) {
 					m_wasRunning = true;
 				}
 
 			} else  {
-				m_walkSpeed = 20f;
+				m_walkSpeed = 10 ;
 				// responsible for setting smoothing setting to only change while running/jumping
 				if (m_wasRunning && !m_Grounded) {
-					m_MovementSmoothing = .15f;
+					m_MovementSmoothing = 0.0f;
 
 				} else {
 					m_wasRunning = false;
