@@ -9343,11 +9343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7804445458217225160, guid: 33f50513638e0884aa5586b5737af2ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.56
+      value: -9.1
       objectReference: {fileID: 0}
     - target: {fileID: 7804445458217225160, guid: 33f50513638e0884aa5586b5737af2ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -2.57
       objectReference: {fileID: 0}
     - target: {fileID: 7804445458217225160, guid: 33f50513638e0884aa5586b5737af2ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9714,6 +9714,10 @@ PrefabInstance:
     - target: {fileID: 8284437647323761988, guid: 085a5fd2a1a3886428e4a6310d9fc8fc, type: 3}
       propertyPath: m_Name
       value: Fly
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284437647323761988, guid: 085a5fd2a1a3886428e4a6310d9fc8fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8284437647323761991, guid: 085a5fd2a1a3886428e4a6310d9fc8fc, type: 3}
       propertyPath: m_RootOrder

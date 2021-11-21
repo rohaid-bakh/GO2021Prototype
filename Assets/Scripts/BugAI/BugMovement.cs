@@ -18,15 +18,16 @@ public class BugMovement : MonoBehaviour
 
     public Tilemap map;
     
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rigidbody;
 
     public float speed;
     
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
 
+        Debug.Log("Origin Position " + originPosition);
         pathfinding = new Pathfinding(gridWidth, gridHeight, cellSize, map.CellToWorld(originPosition));
         grid = pathfinding.GetGrid();
 
@@ -35,7 +36,6 @@ public class BugMovement : MonoBehaviour
                 PathNode pathNode = grid.GetGridMapObject(x, y);
                 if (map.GetTile(new Vector3Int(x, y, 0) - originPosition) != null) {
                     pathNode.isWalkable = false;
-                    //Debug.Log(x + " " + y + " " + map.GetTile(new Vector3Int(x, y, 0) - originPosition).name);
                 }
             }
         }
@@ -56,7 +56,7 @@ public class BugMovement : MonoBehaviour
             
             foreach (PathNode node in path)
             {
-                Debug.Log(node.x + " " + node.y);
+                // Debug.Log(node.x + " " + node.y);
             
             }
         }
@@ -69,7 +69,7 @@ public class BugMovement : MonoBehaviour
             {
                 Vector3 destination = grid.getWorldPosition(path[0].x, path[0].y) + new Vector3(cellSize * .5f, cellSize * .5f, 0);
                 Vector3 velocity = (destination - transform.position).normalized * speed;
-                rigidbody2D.MovePosition(transform.position + velocity * Time.fixedDeltaTime);
+                rigidbody.MovePosition(transform.position + velocity * Time.fixedDeltaTime);
 
                 if (Vector3.Distance(transform.position, destination) < 0.1f)
                 {
