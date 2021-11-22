@@ -19,11 +19,20 @@ public class ShellManager : MonoBehaviour
 
     private List<GameObject> logs = new List<GameObject>();
 
+    private List<string> leafs = new List<string>();
+
+    private bool done = false;
+
     // Start is called before the first frame update
     void Start()
     {
         kongtext = Resources.Load("kongtext") as Font;
         inputField.onSubmit.AddListener(delegate { Run(inputField.text); });
+        
+        Ls ls0 = new Ls("ls");
+        len = 9;
+        DFS(ls0.msg, 0, new List<(string, bool, int)>());
+        done = true;
     }
 
     // Update is called once per frame
@@ -44,23 +53,55 @@ public class ShellManager : MonoBehaviour
     }
 
     void Run(string cmd) {
+
         var splitCmd = cmd.Split(" ");
-        print(splitCmd);
-        if (cmd == "help") {
-            
-            RunCmd_Help();
 
-        } else if (cmd == "ls") {
+        if (splitCmd.Length > 1) {
 
-            RunCmd_List();
+            if (splitCmd.Length == 2 && splitCmd[0].Equals("open")) {
+
+                RunCmd_Open(splitCmd[1]);
+
+            } else {
+
+                InvalidCmd(cmd);
+            }
 
         } else {
+        
+            if (cmd == "help") {
+            
+                RunCmd_Help();
 
-            InvalidCmd(cmd);
+            } else if (cmd == "ls") {
+
+                RunCmd_List();
+
+            } else {
+
+                InvalidCmd(cmd);
+            }
         }
 
         inputField.text = "";
         inputField.ActivateInputField();
+    }
+
+    void RunCmd_Open(string arg) {
+
+        if (leafs.Contains(arg)) {
+
+            AddNewLog("File " + arg + " opened!", 0, Color.white);
+            
+        } else {
+
+            AddNewLog("File " + arg + " not found!", 0, Color.red);
+        }
+
+        Open open0 = new Open("open " + arg);
+        AddNewLog(open0.cmd, 0, Color.black);
+
+        // Open window
     }
 
     void RunCmd_Help() {
@@ -130,20 +171,27 @@ public class ShellManager : MonoBehaviour
         if (node.children == default(List<Node<string>>)){
             
             nodeList.Add((node.val, true, tabs));
-            
-            if (len == 0) {
-            
-                nodeList.Reverse();
-            
-                foreach ((string, bool, int) temp in nodeList) {
-                    
-                    if (temp.Item2) {
-                        
-                        AddNewLog("- " + temp.Item1, temp.Item3, Color.blue);
-                    
-                    } else {
 
-                        AddNewLog("> " + temp.Item1, temp.Item3, Color.blue);
+            if (!done) {
+            
+                leafs.Add(node.val);
+            
+            } else {
+            
+                if (len == 0) {
+                
+                    nodeList.Reverse();
+                
+                    foreach ((string, bool, int) temp in nodeList) {
+                        
+                        if (temp.Item2) {
+                            
+                            AddNewLog("- " + temp.Item1, temp.Item3, Color.blue);
+                        
+                        } else {
+
+                            AddNewLog("> " + temp.Item1, temp.Item3, Color.blue);
+                        }
                     }
                 }
             }

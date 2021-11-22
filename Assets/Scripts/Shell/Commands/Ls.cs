@@ -9,19 +9,19 @@ public class Ls {
         "Root", 
         new List<Node<string>>() {
             new Node<string> (
-                "Parent 1",
+                "Parent1",
                 new List<Node<string>>(){
-                    new Node<string> ("Child 1"),
-                    new Node<string> ("Child 2"),
-                    new Node<string> ("Child 3")
+                    new Node<string> ("Child1"),
+                    new Node<string> ("Child2"),
+                    new Node<string> ("Child3")
                 }
             ),
             new Node<string> (
-                "Parent 2",
+                "Parent2",
                 new List<Node<string>>(){
-                    new Node<string> ("Child 1"),
-                    new Node<string> ("Child 2"),
-                    new Node<string> ("Child 3")
+                    new Node<string> ("Child1"),
+                    new Node<string> ("Child2"),
+                    new Node<string> ("Child3")
                 }
             )
         }
