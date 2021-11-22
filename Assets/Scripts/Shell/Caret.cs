@@ -16,12 +16,13 @@ public class Caret : MonoBehaviour
 
     public float offset;
 
+    public Vector3 whiteSpaceSize;
+
     public bool isFocus = true;
 
     // Start is called before the first frame update
     void Start() {
 
-        inputField.onValueChanged.AddListener(delegate { Formatting(); });
         inputField.ActivateInputField();
     }
 
@@ -33,14 +34,13 @@ public class Caret : MonoBehaviour
 
         if (!oldValue.Equals(newValue)) {
             int length = textComp.text.Length;
-            
             if (length <= 0) {
                 
                 caret.transform.position = new Vector3(790, 1015, 0);
             
             } else {
 
-                caret.transform.position = new Vector3(GetWorldPos(length - 1).x + offset, 1015, 0);
+                caret.transform.position = new Vector3(GetWorldPos(length - 1).x, 1015, 0);
             }
 
         }
@@ -71,24 +71,52 @@ public class Caret : MonoBehaviour
         Vector2 extents = textComp.gameObject.GetComponent<RectTransform>().rect.size;
         textGen.Populate(text, textComp.GetGenerationSettings(extents));
 
-        int newLine = text.Substring(0, charIndex).Split('\n').Length - 1;
-        int whiteSpace = text.Substring(0, charIndex).Split(' ').Length - 1;
-        int indexOfTextQuad = (charIndex * 4) + (newLine * 4) - (whiteSpace * 4);
+        int whiteSpace = 0;
 
-        if (indexOfTextQuad < textGen.vertexCount) {
+        for (int i = 0; i <= charIndex; i++) {
+            
+            if (text[i].Equals(' ')) {
+                
+                whiteSpace++;
+            }
+        }
+        
+        int indexOfTextQuad = (charIndex - whiteSpace) * 4;
+        
+        if (charIndex >= whiteSpace) {
+            
+            if (indexOfTextQuad < textGen.vertexCount) {
 
-            Vector3 avgPos = (textGen.verts[indexOfTextQuad].position + textGen.verts[indexOfTextQuad + 1].position + textGen.verts[indexOfTextQuad + 2].position + textGen.verts[indexOfTextQuad + 3].position) / 4f;
-            return textComp.transform.TransformPoint(avgPos);
+                Vector3 avgPos = new Vector3(offset, 0, 0) + (textGen.verts[indexOfTextQuad].position + textGen.verts[indexOfTextQuad + 1].position + textGen.verts[indexOfTextQuad + 2].position + textGen.verts[indexOfTextQuad + 3].position) / 4f;
+                
+                if (charIndex > 0 && !text[charIndex].Equals(' ')) {
+                
+                    return textComp.transform.TransformPoint(avgPos);
+                
+                } else { 
 
+                    int whiteSpaceFromLastLetter = charIndex - GetAfterLastLetterIdx(text, charIndex) + 1;
+                    return textComp.transform.TransformPoint(avgPos + whiteSpaceSize * whiteSpaceFromLastLetter);
+                }
+            } else {
+                
+                return new Vector3(790, 1015, 0);
+            }
         } else {
 
-            Debug.LogError("Out of text bound");
-            return new Vector3(790, 1015, 0);
+            return new Vector3(790, 1015, 0) + whiteSpaceSize * whiteSpace;
         }
     }
 
-    void Formatting() {
+    int GetAfterLastLetterIdx(string text, int len_minus_1) {
 
-        inputField.text = inputField.text.Replace(" ", "");
+        for (int i = len_minus_1; i >= 0; i--) {
+
+            if (!text[i].Equals(' ')) {
+                
+                return i + 1;
+            }
+        }
+        return 0;
     }
 }
