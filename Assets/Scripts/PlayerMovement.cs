@@ -19,15 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!PauseMenu.isPaused) {
 
         horizontalAxis = Input.GetAxisRaw("Horizontal") * walkSpeed;
         animator.SetFloat("Speed", Mathf.Abs(horizontalAxis));
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-            animator.SetBool("Jump", true);
-        }
+        
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
@@ -36,7 +33,13 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
-
+        if(!animator.GetBool("Crouch")){
+        if (Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+            animator.SetBool("Jump", true);
+        }
+        }
         if (Input.GetButtonDown("Run"))
         {
             run = true;
@@ -51,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
             catchBug = true;
         }
 
+        }
 
     }
 

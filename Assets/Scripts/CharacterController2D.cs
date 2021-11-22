@@ -23,7 +23,7 @@ public class CharacterController2D : MonoBehaviour
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	private bool m_Run; //Whether or not the player is running
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+	const float k_CeilingRadius = .4f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -84,6 +84,7 @@ public class CharacterController2D : MonoBehaviour
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 			{
 				crouch = true;
+				
 			}
 		}
 
