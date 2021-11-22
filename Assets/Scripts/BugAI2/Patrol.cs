@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Patrol : MonoBehaviour
 {
-    [SerializeField] private float m_speed;
+    [SerializeField] private float m_speed = 10f;
+    private float speed;
     private bool m_right = true;
     private Vector2 m_rayDir = Vector2.right; //Used to detect objects infront
     [SerializeField] private float m_distance;
@@ -15,14 +16,14 @@ public class Patrol : MonoBehaviour
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        m_speed = 20f;
+        speed = m_speed;
         m_distance = 1f;
         Physics2D.IgnoreLayerCollision(3,6, true); //Needed to ignore collisions for bug/Player. ID numbers are the layer numbers in Unity
     }
 
     void FixedUpdate()
     {
-        Move(m_speed * Time.fixedDeltaTime, m_right);
+        Move(speed * Time.fixedDeltaTime, m_right);
         RaycastHit2D groundInfo = Physics2D.Raycast(m_groundCheck.position, Vector2.down, m_distance);
 
 
@@ -40,7 +41,7 @@ public class Patrol : MonoBehaviour
 
 
         //Checks to see if there's no ground in front of the bug, or if there's a collision
-        if (groundInfo.collider == null || frontInfo.collider != null)
+        if (groundInfo.collider == null || (frontInfo.collider != null && frontInfo.collider.name != "MC"))
         {
             Flip();
         }
@@ -60,7 +61,7 @@ public class Patrol : MonoBehaviour
             vectordirection = -1;
         }
 
-        m_Rigidbody2D.velocity = new Vector2(movement * m_speed * vectordirection, m_Rigidbody2D.velocity.y);
+        m_Rigidbody2D.velocity = new Vector2(movement * speed * vectordirection, m_Rigidbody2D.velocity.y);
 
     }
     private void Flip()

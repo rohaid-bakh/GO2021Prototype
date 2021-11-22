@@ -71,7 +71,7 @@ public class Jumper : MonoBehaviour
         //if the bug is in midair and the groundInfo raycast sees there is no ground, it will flip into oblivion
         //pitInfo is outside the parantheses because it has a longer ray cast and is farther to the front of the bug
         //allowing for midair detection of pits
-        if ((frontInfo.collider != null && m_grounded) || (pitInfo.collider == null && m_grounded))
+        if ((frontInfo.collider != null && m_grounded && frontInfo.collider.name != "MC") || (pitInfo.collider == null && m_grounded))
         {
             Flip();
         }
