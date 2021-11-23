@@ -18,12 +18,12 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;
 					// A collider that will be disabled when crouching
-    public float catchRange = 0.5f;
+    public float catchRange = 1f;
     public Animator animator;
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	private bool m_Run; //Whether or not the player is running
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+	const float k_CeilingRadius = .4f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -45,7 +45,6 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
 
@@ -79,12 +78,13 @@ public class CharacterController2D : MonoBehaviour
 		if (catching) {
 			Catching();
 		}
-		if (!crouch)
+		if (m_wasCrouching)
 		{
 			// If the character has a ceiling preventing them from standing up, keep them crouching
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 			{
 				crouch = true;
+				
 			}
 		}
 
@@ -124,16 +124,16 @@ public class CharacterController2D : MonoBehaviour
 			//makes sure to only enable running while grounded and not crouching
 
 			if (run && m_Grounded && !crouch) {
-				m_walkSpeed = 50f;
+				m_walkSpeed = 18f;
 				if (!m_wasRunning) {
 					m_wasRunning = true;
 				}
 
 			} else  {
-				m_walkSpeed = 20f;
+				m_walkSpeed = 10 ;
 				// responsible for setting smoothing setting to only change while running/jumping
 				if (m_wasRunning && !m_Grounded) {
-					m_MovementSmoothing = .15f;
+					m_MovementSmoothing = 0.0f;
 
 				} else {
 					m_wasRunning = false;

@@ -11,9 +11,8 @@ public class DebugMenu : MonoBehaviour
     [SerializeField] private UnityEvent m_arenaSwitchInvoke;
     [SerializeField] private GameObject runArena;
     [SerializeField] private GameObject crouchArena;
-
+    [SerializeField] private Camera screen;
     [SerializeField] private CharacterController2D script;
-   
    
    void Start() {
 
@@ -22,6 +21,10 @@ public class DebugMenu : MonoBehaviour
             m_arenaSwitchInvoke = new UnityEvent();
         }
 
+        // if(screen != null){
+        // Debug.Log("Screen Height: " + screen.pixelHeight + " px");
+        // Debug.Log("Screen Width: " + screen.pixelWidth + " px");
+        // }
 
     }
 
