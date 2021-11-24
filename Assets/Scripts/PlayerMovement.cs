@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController2D script;
+    public Animator animator;
 
     float horizontalAxis = 0f; // x input
     public float walkSpeed = 40f; // default 
@@ -18,13 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!PauseMenu.isPaused) {
 
         horizontalAxis = Input.GetAxisRaw("Horizontal") * walkSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontalAxis));
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-        }
+        
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
@@ -33,7 +33,13 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
-
+        if(!animator.GetBool("Crouch")){
+        if (Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+            animator.SetBool("Jump", true);
+        }
+        }
         if (Input.GetButtonDown("Run"))
         {
             run = true;
@@ -48,9 +54,17 @@ public class PlayerMovement : MonoBehaviour
             catchBug = true;
         }
 
+        }
 
     }
 
+    public void onLanding() {
+        animator.SetBool("Jump", false);
+    }
+
+    public void onCrouch(bool onCrouch){
+        animator.SetBool("Crouch", onCrouch);
+    }
   
 
     void FixedUpdate()
