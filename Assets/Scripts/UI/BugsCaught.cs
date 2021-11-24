@@ -40,6 +40,8 @@ public class BugsCaught : MonoBehaviour
         bugText.text = "BUGS CAUGHT : " + bugsCaught + "/" + bugs.transform.childCount;
 
         if (bugsCaught == bugs.transform.childCount && !m_endScene) {
+         Debug.Log("0");
+
           m_endScene = true;
           endScene();
 
@@ -48,9 +50,12 @@ public class BugsCaught : MonoBehaviour
     }
 
     void endScene(){
+        Debug.Log("1");
         scene = SceneManager.GetActiveScene();
         TextManager.SetActive(true);
-        if (scene.buildIndex == 1){
+        if (scene.buildIndex == 0){
+            Debug.Log("2");
+
             StartCoroutine(Type());
             NextLevel.SetActive(true);
         }
