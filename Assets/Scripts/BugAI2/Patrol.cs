@@ -9,6 +9,7 @@ public class Patrol : MonoBehaviour
     private bool m_right = true;
     private Vector2 m_rayDir = Vector2.right; //Used to detect objects infront
     [SerializeField] private float m_distance;
+    private float distance;
     [SerializeField] private Transform m_groundCheck;
     [SerializeField] private Transform m_ownTransform;
     private Rigidbody2D m_Rigidbody2D;
@@ -17,14 +18,15 @@ public class Patrol : MonoBehaviour
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         speed = m_speed;
-        m_distance = 1f;
+        distance = m_distance;
         Physics2D.IgnoreLayerCollision(3,6, true); //Needed to ignore collisions for bug/Player. ID numbers are the layer numbers in Unity
+        Physics2D.IgnoreLayerCollision(6,6, true); //Needed to ignore collisions for bug/bug.
     }
 
     void FixedUpdate()
     {
         Move(speed * Time.fixedDeltaTime, m_right);
-        RaycastHit2D groundInfo = Physics2D.Raycast(m_groundCheck.position, Vector2.down, m_distance);
+        RaycastHit2D groundInfo = Physics2D.Raycast(m_groundCheck.position, Vector2.down, distance);
 
 
         
@@ -37,11 +39,11 @@ public class Patrol : MonoBehaviour
         {
             m_rayDir = Vector2.left;
         }
-        RaycastHit2D frontInfo = Physics2D.Raycast(m_groundCheck.position, m_rayDir, m_distance);
+        RaycastHit2D frontInfo = Physics2D.Raycast(m_groundCheck.position, m_rayDir, distance);
 
 
         //Checks to see if there's no ground in front of the bug, or if there's a collision
-        if (groundInfo.collider == null || (frontInfo.collider != null && frontInfo.collider.name != "MC"))
+        if (groundInfo.collider == null || (frontInfo.collider != null && frontInfo.collider.name != "MC" && frontInfo.collider.gameObject.layer != 6))
         {
             Flip();
         }

@@ -42,14 +42,14 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -114,7 +114,234 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Branches_Center_Tree_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 92
+        width: 89
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 10.467537, y: -17.953285}
+        - {x: 13.31868, y: -14.943779}
+        - {x: 16.306946, y: -12.259163}
+        - {x: 16.652672, y: -7.0028915}
+        - {x: 34.361214, y: -6.9756317}
+        - {x: 34.698265, y: -8.151222}
+        - {x: 36.67501, y: -8.12912}
+        - {x: 36.74964, y: -8.952965}
+        - {x: 38.608406, y: -8.930695}
+        - {x: 38.599854, y: -7.9044647}
+        - {x: 40.70115, y: -8.001442}
+        - {x: 40.7026, y: -6.9587326}
+        - {x: 41.604187, y: -6.8089447}
+        - {x: 41.654114, y: -6.201149}
+        - {x: 42.601295, y: -5.8516617}
+        - {x: 42.403023, y: -5.1013107}
+        - {x: 43.55137, y: -5.0412674}
+        - {x: 43.55137, y: -4.0412674}
+        - {x: 44.450073, y: -3.9414139}
+        - {x: 44.400146, y: 1.0542679}
+        - {x: 36.77215, y: 0.90447235}
+        - {x: 36.47258, y: 1.8545456}
+        - {x: 15.436951, y: 2.0547867}
+        - {x: 15.618393, y: 8.13353}
+        - {x: 12.539642, y: 8.070488}
+        - {x: 12.476875, y: 12.007721}
+        - {x: 7.476593, y: 11.944672}
+        - {x: 7.511963, y: 14.052795}
+        - {x: 1.4669037, y: 14.101761}
+        - {x: 1.5527649, y: 18.161667}
+        - {x: -1.4770699, y: 18.198349}
+        - {x: -1.4918594, y: 22.045364}
+        - {x: -7.5223427, y: 22.080826}
+        - {x: -7.524849, y: 24.291885}
+        - {x: -16.463654, y: 24.290726}
+        - {x: -16.53247, y: 24.965942}
+        - {x: -26.55167, y: 25.047745}
+        - {x: -26.477318, y: 24.02208}
+        - {x: -31.58707, y: 23.997345}
+        - {x: -37.55805, y: 24.05539}
+        - {x: -37.54608, y: 22.046082}
+        - {x: -43.6404, y: 21.973251}
+        - {x: -43.54352, y: 17.07051}
+        - {x: -43.43725, y: 8.22216}
+        - {x: -43.350204, y: 6.8598175}
+        - {x: -40.42763, y: 6.9271164}
+        - {x: -40.43725, y: -2.3431168}
+        - {x: -40.210022, y: -7.937248}
+        - {x: -34.51422, y: -7.966835}
+        - {x: -33.822277, y: -11.090057}
+        - {x: -32.539265, y: -12.9893265}
+        - {x: -29.260693, y: -17.192879}
+        - {x: -25.482632, y: -19.07763}
+        - {x: -17.576893, y: -18.885399}
+        - {x: -15.692978, y: -22.076897}
+        - {x: -11.539555, y: -26}
+        - {x: -2.0157928, y: -25.921867}
+        - {x: 2.4580383, y: -21.516228}
+        - {x: 2.6021347, y: -17.990501}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 8e21c1479deb3f24ea5191da4894a6cc
+      internalID: -462075565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches_Center_Tree_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 91
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87b8b59062e94541a0b86f4ac8f43d9
+      internalID: 1088795065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches_Center_Tree_2
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 68
+        width: 80
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d71ed55f175cc34fb3c9f14063dea34
+      internalID: 1804447081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches_Center_Tree_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 87
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bb35d5b7291374aaa750ea51da059b
+      internalID: -604301701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches_Center_Tree_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 39
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678e04662c502784b9d35c04283764f6
+      internalID: -1669438295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches_Center_Tree_5
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 60
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02c9dd0e64f2984bb1b8142479ada86
+      internalID: 686041770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches_Center_Tree_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 68
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffafaa746e21128438248ce131b5c2e6
+      internalID: -1660251783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches_Center_Tree_7
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0
+        width: 94
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3513dfc3086e2945baa6ce2bc8aea68
+      internalID: 43206051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -125,7 +352,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Branches_Center_Tree_7: 43206051
+      Branches_Center_Tree_1: 1088795065
+      Branches_Center_Tree_6: -1660251783
+      Branches_Center_Tree_4: -1669438295
+      Branches_Center_Tree_5: 686041770
+      Branches_Center_Tree_0: -462075565
+      Branches_Center_Tree_2: 1804447081
+      Branches_Center_Tree_3: -604301701
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
