@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 562dc761f2fad794996f805e0add805d
+guid: 788db0fad55e9db4ebc7b63a66bf1954
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Yellow_round_beetle_0
+      name: Gracehopper_Bug_0
       rect:
         serializedVersion: 2
         x: 1
+        y: 3
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c270459bdd3fa9a4e9626e57dbefd0e9
+      internalID: 918546154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gracehopper_Bug_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 4
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1513af39e44b0e44911d4d3f9454b4a
+      internalID: 240425300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gracehopper_Bug_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 3
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed2961b8bf388249ac399947a9297d8
+      internalID: 1624835056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gracehopper_Bug_3
+      rect:
+        serializedVersion: 2
+        x: 122
         y: 1
-        width: 16
-        height: 11
+        width: 32
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,71 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 958ec4cd3d2b7044d87abeb8767e06ad
-      internalID: 1039924176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yellow_round_beetle_1
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 0
-        width: 16
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59ede62d7827bfe46925bed0fc38a616
-      internalID: -392994137
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yellow_round_beetle_2
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 0
-        width: 16
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8d34732142f29b4fa9860e84d57925d
-      internalID: 878691301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yellow_round_beetle_3
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 1
-        width: 16
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f2c1de877098764292999f77fa05e2b
-      internalID: 1398301275
+      spriteID: a7a51f2f432a39e40a6a662e3fab7666
+      internalID: 871018469
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Yellow_round_beetle_1: -392994137
-      Yellow_round_beetle_0: 1039924176
-      Yellow_round_beetle_3: 1398301275
-      Yellow_round_beetle_2: 878691301
+      Gracehopper_Bug_3: 871018469
+      Gracehopper_Bug_1: 240425300
+      Gracehopper_Bug_2: 1624835056
+      Gracehopper_Bug_0: 918546154
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
