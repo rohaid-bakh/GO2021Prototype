@@ -50,6 +50,14 @@ public class Jumper : MonoBehaviour
 
 
 
+        Move(m_speed * Time.fixedDeltaTime);
+
+    }
+
+    public void Move(float movement)
+    {
+
+        
         // RaycastHit2D groundInfo = Physics2D.Raycast(m_groundCheck.position, Vector2.down, distance);
         // groundInfo.collider == null ||
         RaycastHit2D pitInfo = Physics2D.Raycast(m_pitCheck.position, Vector2.down, distance);
@@ -77,15 +85,10 @@ public class Jumper : MonoBehaviour
             Flip();
         }
 
-        Move(m_speed * Time.fixedDeltaTime, m_right, m_grounded);
 
-    }
-
-    public void Move(float movement, bool direction, bool grounded)
-    {
         //Necessary code block to make sure that the bug is moving in the right direction.
         int vectordirection = 0;
-        if (direction)
+        if (m_right)
         {
             vectordirection = 1;
         }
@@ -99,7 +102,7 @@ public class Jumper : MonoBehaviour
         m_Rigidbody2D.velocity = new Vector2(movement * m_speed * vectordirection, m_Rigidbody2D.velocity.y);
 
         //Makes the bug hop everytime it's on the ground.
-        if (grounded)
+        if (m_grounded)
         {
             m_Rigidbody2D.AddForce(new Vector2(3f, y_jumpHeight));
         }
