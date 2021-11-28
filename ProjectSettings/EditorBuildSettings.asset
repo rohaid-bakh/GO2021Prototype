@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: eed9ef39079491a4cbc58c72060026a5
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 7f76f2aa20c37e24db1da648c598cd14
   - enabled: 1
