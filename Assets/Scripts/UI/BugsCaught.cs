@@ -40,6 +40,7 @@ public class BugsCaught : MonoBehaviour
         bugText.text = "BUGS CAUGHT : " + bugsCaught + "/" + bugs.transform.childCount;
 
         if (bugsCaught == bugs.transform.childCount && !m_endScene) {
+
           m_endScene = true;
           endScene();
 
@@ -50,23 +51,30 @@ public class BugsCaught : MonoBehaviour
     void endScene(){
         scene = SceneManager.GetActiveScene();
         TextManager.SetActive(true);
-        if (scene.buildIndex == 1){
+        if (scene.buildIndex == 0){
+            Debug.Log("1");
+
             StartCoroutine(Type());
             NextLevel.SetActive(true);
         }
 
-        if (scene.buildIndex == 2){
-            //have Grasshooper show up 
+        if (scene.buildIndex == 1){
+            index++;
+            StartCoroutine(Type());
+           NextLevel.SetActive(true);
         }
 
     }
 
+  
     IEnumerator Type() {
        
         foreach(char letter in dialougeText[index].ToCharArray()){
             dialougeDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+
+        yield return new WaitForSeconds(2f);
         
         
     }
