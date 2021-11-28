@@ -10,16 +10,20 @@ public class CharacterController2D : MonoBehaviour
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
-	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
+	[SerializeField] private LayerMask m_WhatIsGround;	
+	
+    public Transform catchCheck;
+    public LayerMask bugLayer;						// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;
 					// A collider that will be disabled when crouching
-
+    public float catchRange = 1f;
+    public Animator animator;
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	private bool m_Run; //Whether or not the player is running
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+	const float k_CeilingRadius = .4f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -41,7 +45,6 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
 
@@ -69,15 +72,19 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool crouch, bool jump, bool run)
+	public void Move(float move, bool crouch, bool jump, bool run, bool catching)
 	{
 		// If crouching, check to see if the character can stand up
-		if (!crouch)
+		if (catching) {
+			Catching();
+		}
+		if (m_wasCrouching)
 		{
 			// If the character has a ceiling preventing them from standing up, keep them crouching
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 			{
 				crouch = true;
+				
 			}
 		}
 
@@ -117,16 +124,16 @@ public class CharacterController2D : MonoBehaviour
 			//makes sure to only enable running while grounded and not crouching
 
 			if (run && m_Grounded && !crouch) {
-				m_walkSpeed = 50f;
+				m_walkSpeed = 18f;
 				if (!m_wasRunning) {
 					m_wasRunning = true;
 				}
 
 			} else  {
-				m_walkSpeed = 20f;
+				m_walkSpeed = 10 ;
 				// responsible for setting smoothing setting to only change while running/jumping
 				if (m_wasRunning && !m_Grounded) {
-					m_MovementSmoothing = .15f;
+					m_MovementSmoothing = 0.0f;
 
 				} else {
 					m_wasRunning = false;
@@ -182,4 +189,17 @@ public class CharacterController2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	private void Catching()
+    {
+        animator.SetTrigger("Catch");
+        Collider2D[] bugs = Physics2D.OverlapCircleAll(catchCheck.position, catchRange, bugLayer);
+
+        foreach(Collider2D bug in bugs) {
+            bug.GetComponent<Caught>().Catch(bug);
+        }
+
+    }
+
+	
 }
