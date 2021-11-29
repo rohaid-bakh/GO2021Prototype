@@ -10496,10 +10496,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7687656528802691444, guid: d7e6806f355b67c44a1ecb1f5db7bdd0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 546.99994
-      objectReference: {fileID: 0}
     - target: {fileID: 7687656528802691449, guid: d7e6806f355b67c44a1ecb1f5db7bdd0, type: 3}
       propertyPath: bugs
       value: 
