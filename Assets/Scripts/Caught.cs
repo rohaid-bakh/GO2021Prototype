@@ -14,9 +14,6 @@ public class Caught : MonoBehaviour
         source.Play();
         sprite.enabled = false;
         StartCoroutine(turnOffBug(col));
-        Debug.Log("Sound has Played");
-        
-        
     }
 
     IEnumerator turnOffBug(Collider2D col){

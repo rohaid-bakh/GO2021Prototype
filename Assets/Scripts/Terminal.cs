@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Terminal : MonoBehaviour
 {
     public GameObject[] textContainers = new GameObject[6];
-    public string[] texts = {"CNCT Windows [Version 11.0.20031.1344]", "C:\\Users\\Jo_Hopper>", "ls", "> Projects", "> Techno_Bugs", "- Bugs_Data.txt"};
+    public string[] texts = {"CNCT Windows [Version 11.0.20031.1344]", "C:\\Users\\Jo_Hopper>", "ls", "> Projects", "> Techno_Bugs", "- Bugs_Data.txt \n Click Me! :)"};
     
     // Start is called before the first frame update
     void Start()

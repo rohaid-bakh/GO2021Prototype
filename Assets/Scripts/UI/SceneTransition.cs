@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class SceneTransition : MonoBehaviour
 {
    public Animator animationTransition;
@@ -10,7 +11,12 @@ public class SceneTransition : MonoBehaviour
    private Scene scene;
 
    public float transitionTime = 1f;
+        [SerializeField] private PauseMenu pauseScript;
+     [SerializeField] private Button pauseButton;
+     
    void OnTriggerEnter2D(Collider2D col){
+      pauseScript.enabled = false;
+      pauseButton.enabled = false;
     if (col.name == "MC"){
        SceneAnimation();
     }

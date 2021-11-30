@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         setPause(true);
         Time.timeScale = 0f;
+        audio.gameObject.GetComponent<Animator>().enabled = false;
         audio.volume *= .5f;
         }
 
@@ -42,6 +43,8 @@ public class PauseMenu : MonoBehaviour
          if (pauseMenuUI != null){
          pauseMenuUI.SetActive(false);
          setPause(false);
+         
+        audio.gameObject.GetComponent<Animator>().enabled = true;
          Time.timeScale = 1f;
          audio.volume *= 2f;
          }

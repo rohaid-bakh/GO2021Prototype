@@ -40,7 +40,6 @@ public class BugsCaught : MonoBehaviour
         bugText.text = bugsCaught + "/" + bugs.transform.childCount;
 
         if (bugsCaught == bugs.transform.childCount && !m_endScene) {
-
           m_endScene = true;
           endScene();
 
