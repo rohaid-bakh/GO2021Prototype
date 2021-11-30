@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class Caught : MonoBehaviour
 {
-  
+    private AudioSource source;
 
-    // Update is called once per frame
+    void Awake(){
+        source = GetComponent<AudioSource>();
+    }
     public void Catch(Collider2D col) {
-        //play animation before destroying
-        // record the amount of bugs caught
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        source.Play();
+        sprite.enabled = false;
+        StartCoroutine(turnOffBug(col));
+        Debug.Log("Sound has Played");
+        
+        
+    }
+
+    IEnumerator turnOffBug(Collider2D col){
+        yield return new WaitForSeconds(source.clip.length);
         col.gameObject.SetActive(false);
-        // deactivate
+        
     }
 }

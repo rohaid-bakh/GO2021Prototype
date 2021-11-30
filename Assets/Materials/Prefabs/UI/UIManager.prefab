@@ -888,7 +888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444b11d3e3f8b144abeb4eecbabbc1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  animationTransition: {fileID: 0}
+  musicTransition: {fileID: 0}
   transitionTime: 1
 --- !u!1 &7687656528161271187
 GameObject:
@@ -1510,7 +1511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 547, y: -47}
+  m_AnchoredPosition: {x: 546.99994, y: -47}
   m_SizeDelta: {x: 800, y: 86.173}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &7687656528802691450
