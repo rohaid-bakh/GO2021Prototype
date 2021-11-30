@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
-   public Animator transition;
+   public Animator animationTransition;
+    public Animator musicTransition;
    
    private Scene scene;
 
@@ -19,7 +20,8 @@ public class SceneTransition : MonoBehaviour
       StartCoroutine(LoadAnimation());
    }
    IEnumerator LoadAnimation() {
-      transition.SetTrigger("Start");
+      animationTransition.SetTrigger("Start");
+      musicTransition.SetTrigger("Start");
       yield return new WaitForSeconds(3f);
       scene = SceneManager.GetActiveScene();
       SceneManager.LoadScene(scene.buildIndex+1, LoadSceneMode.Single);
