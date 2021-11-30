@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 403.00012, y: 449}
+  m_AnchoredPosition: {x: 403.00012, y: 430.00003}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8738357997413103731
@@ -888,6 +888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444b11d3e3f8b144abeb4eecbabbc1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 0}
+  transitionTime: 1
 --- !u!1 &7687656528161271187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 546.99994, y: -28}
+  m_AnchoredPosition: {x: 547, y: -47}
   m_SizeDelta: {x: 800, y: 86.173}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &7687656528802691450
@@ -2061,7 +2063,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f4ec8f6e7a023046a2256aabb8309f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b8aec1c600505f84abfa2576b3ffa033, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2090,18 +2092,18 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.90159327, b: 0.37169808, a: 1}
-    m_HighlightedColor: {r: 0.8490566, g: 0.46971154, b: 0, a: 1}
-    m_PressedColor: {r: 0.8509804, g: 0.47058824, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: a093add5e9d6b7c4a9608f2a0d0f9fe2, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: cd327f63eeb13ae43b72187825beb118, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:

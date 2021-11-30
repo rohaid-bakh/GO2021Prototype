@@ -21,7 +21,9 @@ public class Terminal : MonoBehaviour
     }
 
     IEnumerator FillContainersWithTexts() {
-
+        // Gives enough time for the loading transition to finish;
+        
+        yield return new WaitForSeconds(1f);
         int i = 0;
         string text = texts[i];
         int t = 0;

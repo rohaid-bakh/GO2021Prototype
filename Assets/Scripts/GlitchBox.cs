@@ -11,6 +11,8 @@ public class GlitchBox : MonoBehaviour
     public GameObject glitch;
     public GameObject canvas;
 
+    public SceneTransition loadingScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,6 @@ public class GlitchBox : MonoBehaviour
 
      IEnumerator NextScene() { 
          yield return new WaitForSeconds (3f);
-         SceneManager.LoadScene(2, LoadSceneMode.Single);
+         loadingScript.SceneAnimation();
      }
 }

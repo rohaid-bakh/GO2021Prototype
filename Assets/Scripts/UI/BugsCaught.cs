@@ -53,15 +53,13 @@ public class BugsCaught : MonoBehaviour
         TextManager.SetActive(true);
         if (scene.buildIndex == 2){
             Debug.Log("1");
-
             StartCoroutine(Type());
-            NextLevel.SetActive(true);
+            
         }
 
         if (scene.buildIndex == 3){
             index++;
             StartCoroutine(Type());
-           NextLevel.SetActive(true);
         }
 
     }
@@ -74,8 +72,8 @@ public class BugsCaught : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        yield return new WaitForSeconds(2f);
-        
+        yield return new WaitForSeconds(1f);
+        NextLevel.SetActive(true);
         
     }
 }
