@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GlitchBox : MonoBehaviour
 {
     public bool isHovering = false;
@@ -10,6 +10,8 @@ public class GlitchBox : MonoBehaviour
     public GameObject overlay;
     public GameObject glitch;
     public GameObject canvas;
+
+    public SceneTransition loadingScript;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class GlitchBox : MonoBehaviour
             glitch.SetActive(true);
             canvas.SetActive(true);
             isClicked = true;
+            StartCoroutine(NextScene());
         }
     }
 
@@ -35,4 +38,9 @@ public class GlitchBox : MonoBehaviour
     private void OnMouseExit() {
         isHovering = false;
     }
+
+     IEnumerator NextScene() { 
+         yield return new WaitForSeconds (3f);
+         loadingScript.SceneAnimation();
+     }
 }

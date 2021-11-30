@@ -7,7 +7,7 @@ using TMPro;
 public class BugsCaught : MonoBehaviour
 {
     [SerializeField] private GameObject bugs;
-    [SerializeField] private Text bugText;
+    [SerializeField] private TextMeshProUGUI bugText;
     private Scene scene;
     public int bugsCaught = 0;
 
@@ -22,7 +22,7 @@ public class BugsCaught : MonoBehaviour
 
     void Start()
     {
-        bugText.text = "BUGS CAUGHT : " + bugsCaught + "/" + bugs.transform.childCount;
+        bugText.text = bugsCaught + "/" + bugs.transform.childCount;
     }
     void Update()
     {
@@ -37,10 +37,9 @@ public class BugsCaught : MonoBehaviour
             bugsCaught = currentCatch;
         }
 
-        bugText.text = "BUGS CAUGHT : " + bugsCaught + "/" + bugs.transform.childCount;
+        bugText.text = bugsCaught + "/" + bugs.transform.childCount;
 
         if (bugsCaught == bugs.transform.childCount && !m_endScene) {
-
           m_endScene = true;
           endScene();
 
@@ -51,17 +50,15 @@ public class BugsCaught : MonoBehaviour
     void endScene(){
         scene = SceneManager.GetActiveScene();
         TextManager.SetActive(true);
-        if (scene.buildIndex == 0){
+        if (scene.buildIndex == 2){
             Debug.Log("1");
-
             StartCoroutine(Type());
-            NextLevel.SetActive(true);
+            
         }
 
-        if (scene.buildIndex == 1){
+        if (scene.buildIndex == 3){
             index++;
             StartCoroutine(Type());
-           NextLevel.SetActive(true);
         }
 
     }
@@ -74,8 +71,8 @@ public class BugsCaught : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        yield return new WaitForSeconds(2f);
-        
+        yield return new WaitForSeconds(1f);
+        NextLevel.SetActive(true);
         
     }
 }

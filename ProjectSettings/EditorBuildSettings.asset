@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 9eaad616b315cb24782bd8b153c78a74
+  - enabled: 1
     path: Assets/Scenes/Prologue.unity
     guid: eed9ef39079491a4cbc58c72060026a5
   - enabled: 1

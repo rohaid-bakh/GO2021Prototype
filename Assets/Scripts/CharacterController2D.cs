@@ -40,6 +40,7 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_wasCrouching = false;
 	private bool m_wasRunning = false; // For changing movement smoothing during jumping
 
+    public AudioSource netSwoosh;
 	
 	
 	private void Awake()
@@ -192,6 +193,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Catching()
     {
+		netSwoosh.Play();
         animator.SetTrigger("Catch");
         Collider2D[] bugs = Physics2D.OverlapCircleAll(catchCheck.position, catchRange, bugLayer);
 

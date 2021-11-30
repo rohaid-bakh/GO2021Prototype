@@ -29,33 +29,42 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void PauseGame(){
-
+        if (pauseMenuUI != null){
         pauseMenuUI.SetActive(true);
         setPause(true);
         Time.timeScale = 0f;
+        audio.gameObject.GetComponent<Animator>().enabled = false;
         audio.volume *= .5f;
+        }
 
     }
 
     public void ResumeGame(){
+         if (pauseMenuUI != null){
          pauseMenuUI.SetActive(false);
          setPause(false);
+         
+        audio.gameObject.GetComponent<Animator>().enabled = true;
          Time.timeScale = 1f;
          audio.volume *= 2f;
+         }
     }
 
     public void LoadHelpMenu() {
+         if (pauseMenuUI != null && helpMenuUI != null){
         pauseMenuUI.SetActive(false);
         helpMenuUI.SetActive(true);
+         }
 
     }
-    public void QuitQame(){
-        Debug.Log("Quit");
+    public void QuitGame(){
         Application.Quit();
     }
 
     public void setPause(bool pause){
         isPaused = pause;
     }
+
+
 
 }
