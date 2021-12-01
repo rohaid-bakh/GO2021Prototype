@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3546688662009917946, guid: 9d10a4d289aee3e459084d967a4da666, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.26
+      value: 8.74
       objectReference: {fileID: 0}
     - target: {fileID: 3546688662009917946, guid: 9d10a4d289aee3e459084d967a4da666, type: 3}
       propertyPath: m_LocalPosition.z
@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3546688662807442488, guid: 9d10a4d289aee3e459084d967a4da666, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.11
+      value: -10.42
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d10a4d289aee3e459084d967a4da666, type: 3}
@@ -2095,7 +2095,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 2.4375, y: 1.125, z: 0}
+  m_ChunkCullingBounds: {x: 2.46875, y: 1.125, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -14036,7 +14036,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.5625, y: 3.25}
+    oldSize: {x: 5.625, y: 3.25}
     newSize: {x: 5.5625, y: 3.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

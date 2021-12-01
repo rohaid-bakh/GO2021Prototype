@@ -2288,8 +2288,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Programmer, Team Organizer, Game Designer:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9c2d30b19ce3a9f409a892d37abf3506, type: 2}
-  m_sharedMaterial: {fileID: 4326213014961405011, guid: 9c2d30b19ce3a9f409a892d37abf3506, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ff77854379f28504e82db197efd94308, type: 2}
+  m_sharedMaterial: {fileID: 4326213014961405011, guid: ff77854379f28504e82db197efd94308, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2865,6 +2865,8 @@ MonoBehaviour:
   animationTransition: {fileID: 655677301}
   musicTransition: {fileID: 314779787}
   transitionTime: 1
+  pauseScript: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!1 &1628793413
 GameObject:
   m_ObjectHideFlags: 0

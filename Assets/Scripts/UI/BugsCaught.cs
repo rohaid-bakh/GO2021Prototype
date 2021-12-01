@@ -7,6 +7,7 @@ using TMPro;
 public class BugsCaught : MonoBehaviour
 {
     [SerializeField] private GameObject bugs;
+    [SerializeField] public GameObject skip;
     [SerializeField] private TextMeshProUGUI bugText;
     private Scene scene;
     public int bugsCaught = 0;
@@ -51,6 +52,7 @@ public class BugsCaught : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         TextManager.SetActive(true);
         if (scene.buildIndex == 2){
+            skip.SetActive(false);
             StartCoroutine(Type());
         }
 

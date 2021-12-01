@@ -119,12 +119,12 @@ TextureImporter:
       name: Branches_Left_Tree_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 71
-        width: 12
-        height: 26
+        x: 45
+        y: 56
+        width: 13
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,7 +145,7 @@ TextureImporter:
         width: 94
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: Branches_Left_Tree_2
       rect:
         serializedVersion: 2
-        x: 13
+        x: 12
         y: 0
-        width: 64
+        width: 65
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
