@@ -16,4 +16,9 @@ Music Composer: Louis de Bailliencourt
 
 2D Pixel Artist/Animator, Narrative and Game Designer: Avelore Ave (bloomzeyestudio@protonmail.com / @bloomzeye
 
+Sound Effects:
+https://freesound.org/people/qubodup/sounds/60007/
+
+https://freesound.org/people/Kenneth_Cooney/sounds/463067/
+
 Playtesters: Undyne and several others.
