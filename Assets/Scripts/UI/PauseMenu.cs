@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void PauseGame(){
+        Debug.Log("Test Pause Button");
         if (pauseMenuUI != null){
         pauseMenuUI.SetActive(true);
         setPause(true);

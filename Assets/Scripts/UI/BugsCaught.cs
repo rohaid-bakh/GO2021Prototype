@@ -51,12 +51,15 @@ public class BugsCaught : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         TextManager.SetActive(true);
         if (scene.buildIndex == 2){
-            Debug.Log("1");
+            StartCoroutine(Type());
+        }
+
+        if (scene.buildIndex == 3){
             StartCoroutine(Type());
             
         }
 
-        if (scene.buildIndex == 3){
+        if (scene.buildIndex == 4){
             index++;
             StartCoroutine(Type());
         }
